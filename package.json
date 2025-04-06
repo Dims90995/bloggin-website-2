@@ -1,0 +1,27 @@
+{
+  "name": "bloggin-website-2",
+  "version": "1.0.0",
+  "description": "finale module 3",
+  "homepage": "https://github.com/Dims90995/bloggin-website-2#readme",
+  "bugs": {
+    "url": "https://github.com/Dims90995/bloggin-website-2/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dims90995/bloggin-website-2.git"
+  },
+  "license": "ISC",
+  "author": "me",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.13.2"
+  }
+}
