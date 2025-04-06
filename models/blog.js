@@ -9,4 +9,5 @@ const blogSchema = new mongoose.Schema({
 module.exports = mongoose.model('Blog', blogSchema);
 const express = require('express');
 const router = express.Router();
-const Blog = require('../models/blog'); // Adjust the path as necessary
+
+
