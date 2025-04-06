@@ -1,11 +1,11 @@
 // Function to get query parameters from the URL
-function getQueryParam(param: string): string | null {
+function getQueryParameter(param: string): string | null {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(param);
 }
   
   document.addEventListener('DOMContentLoaded', function() {
-    const blogId = getQueryParam('id');
+    const blogId = getQueryParameter('id');
     if (!blogId) {
       alert('Invalid blog ID');
       return;

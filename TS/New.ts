@@ -1,9 +1,11 @@
-const form = document.getElementById('newBlogForm');
+const form = document.getElementById('newBlogForm') as HTMLFormElement | null;
+
 if (form) {
-  form.addEventListener('submit', function(e: SubmitEvent) {
+  form.addEventListener('submit', (e: SubmitEvent) => {
     e.preventDefault();
+
     const titleElement = document.getElementById('title') as HTMLInputElement | null;
-    const contentElement = document.getElementById('content') as HTMLInputElement | null;
+    const contentElement = document.getElementById('content') as HTMLTextAreaElement | null;
 
     if (titleElement && contentElement) {
       const title = titleElement.value;
@@ -18,14 +20,18 @@ if (form) {
       })
         .then(response => {
           if (response.ok) {
-            alert('Blog post created successfully.');
+            // Redirect or show success message
+            window.location.href = '/index.html';
           } else {
             alert('Failed to create blog post.');
           }
         })
-        .catch((error) => console.error('Error:', error));
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while creating the post.');
+        });
     } else {
       alert('Title or content input not found.');
     }
-  })};
-  
+  });
+}

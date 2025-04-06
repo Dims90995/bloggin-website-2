@@ -1,7 +1,4 @@
-function getQueryParam(param) {
-    var urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
-}
+// Removed duplicate implementation of getQueryParam
 document.addEventListener('DOMContentLoaded', function () {
     var blogId = getQueryParam('id');
     if (!blogId) {

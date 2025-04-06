@@ -16,16 +16,19 @@ if (form) {
             })
                 .then(function (response) {
                 if (response.ok) {
-                    alert('Blog post created successfully.');
+                    // Redirect or show success message
+                    window.location.href = '/index.html';
                 }
                 else {
                     alert('Failed to create blog post.');
                 }
-            })["catch"](function (error) { return console.error('Error:', error); });
+            })["catch"](function (error) {
+                console.error('Error:', error);
+                alert('An error occurred while creating the post.');
+            });
         }
         else {
             alert('Title or content input not found.');
         }
     });
 }
-;
