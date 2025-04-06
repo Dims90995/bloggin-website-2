@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
         alert('Invalid blog ID');
         return;
     }
-    // Fetch current blog details
+
     fetch("/api/blogs/" + blogId)
         .then(function (response) { return response.json(); })
         .then(function (blog) {
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
             contentElement.value = blog.content;
         }
     })["catch"](function (error) { return console.error('Error fetching blog:', error); });
-    // Handle form submission for update
+   
     var formElement = document.getElementById('editBlogForm');
     if (formElement) {
         formElement.addEventListener('submit', function (e) {

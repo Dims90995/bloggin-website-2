@@ -5,20 +5,20 @@ const Blog = require('./models/blog');
 
 const app = express();
 
-// Connect to MongoDB
+
 mongoose.connect('mongodb://localhost:27017/blogPlatform', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
 
 // Middleware
-app.use(bodyParser.json()); // To handle JSON payloads
-app.use(bodyParser.urlencoded({ extended: true })); // To handle form data
-app.use(express.static('public')); // Serve static files from the public folder
+app.use(bodyParser.json()); 
+app.use(bodyParser.urlencoded({ extended: true })); 
+app.use(express.static('public')); 
 
 // API Endpoints
 
-// GET all blog posts
+
 app.get('/api/blogs', async (req, res) => {
   try {
     const blogs = await Blog.find().sort({ createdAt: -1 });
@@ -28,7 +28,7 @@ app.get('/api/blogs', async (req, res) => {
   }
 });
 
-// POST a new blog post
+
 app.post('/api/blogs', async (req, res) => {
   try {
     const { title, content } = req.body;
@@ -39,7 +39,7 @@ app.post('/api/blogs', async (req, res) => {
   }
 });
 
-// GET a single blog post by ID
+
 app.get('/api/blogs/:id', async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
@@ -50,7 +50,7 @@ app.get('/api/blogs/:id', async (req, res) => {
   }
 });
 
-// PUT (update) a blog post by ID
+
 app.put('/api/blogs/:id', async (req, res) => {
   try {
     const { title, content } = req.body;
@@ -66,7 +66,7 @@ app.put('/api/blogs/:id', async (req, res) => {
   }
 });
 
-// DELETE a blog post by ID
+
 app.delete('/api/blogs/:id', async (req, res) => {
   try {
     const blog = await Blog.findByIdAndDelete(req.params.id);
@@ -77,7 +77,7 @@ app.delete('/api/blogs/:id', async (req, res) => {
   }
 });
 
-// Start the server
+
 const port = 3000;
 app.listen(port,
     () => console.log(`Server running at http://localhost:${port}`)
